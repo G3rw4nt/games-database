@@ -1,6 +1,7 @@
 package pl.g3rw4nt.gamesdatabase.manager;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import pl.g3rw4nt.gamesdatabase.dao.GameRepo;
@@ -35,7 +36,7 @@ public class GameManager {
         gameRepo.deleteById(id);
     }
 
-    @EventListener()
+    @EventListener(ApplicationReadyEvent.class)
     public void fillDB()
     {
         save(new Game(0,"Grand Theft Auto V","Playstation 5","Action", "PAL", LocalDate.of(2022,3,15),85));
