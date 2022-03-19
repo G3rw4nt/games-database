@@ -1,8 +1,15 @@
-package pl.g3rw4nt.gamesdatabase;
+package pl.g3rw4nt.gamesdatabase.dao.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Game {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private int id;
     private String title;
     private String platform;
@@ -10,6 +17,8 @@ public class Game {
     private String region;
     private LocalDate releaseDate;
     private int metascore;
+
+    public Game(){}
 
     public Game(int id, String title, String platform, String genre, String region, LocalDate releaseDate, int metascore) {
         this.id = id;
