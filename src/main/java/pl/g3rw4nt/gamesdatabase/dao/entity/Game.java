@@ -1,32 +1,43 @@
-package pl.g3rw4nt.gamesdatabase;
+package pl.g3rw4nt.gamesdatabase.dao.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+@Entity
 public class Game {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String title;
     private String platform;
     private String genre;
     private String region;
-    private LocalDate releaseDate;
+    private LocalDate releasedate;
     private int metascore;
 
-    public Game(int id, String title, String platform, String genre, String region, LocalDate releaseDate, int metascore) {
-        this.id = id;
+    public Game()
+    {
+
+
+    }
+
+    public Game(String title, String platform, String genre, String region, LocalDate releasedate, int metascore) {
         this.title = title;
         this.platform = platform;
         this.genre = genre;
         this.region = region;
-        this.releaseDate = releaseDate;
+        this.releasedate = releasedate;
         this.metascore = metascore;
     }
 
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -54,12 +65,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public LocalDate getReleaseDate() {
-        return releaseDate;
+    public LocalDate getReleasedate() {
+        return releasedate;
     }
 
-    public void setReleaseDate(LocalDate releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setReleasedate(LocalDate releaseDate) {
+        this.releasedate = releaseDate;
     }
 
     public int getMetascore() {
@@ -69,13 +80,10 @@ public class Game {
     public void setMetascore(int metascore) {
         this.metascore = metascore;
     }
-    public String getRegion() {
-        return region;
-    }
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
+    public String getRegion() {return region;}
+
+    public void setRegion(String region) {this.region = region;}
 
 
 }
