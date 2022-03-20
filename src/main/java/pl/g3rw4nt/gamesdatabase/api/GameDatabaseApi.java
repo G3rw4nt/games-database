@@ -4,21 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pl.g3rw4nt.gamesdatabase.dao.entity.Game;
 import pl.g3rw4nt.gamesdatabase.manager.GameManager;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/games")
 public class GameDatabaseApi {
+
     private GameManager games;
 
     @Autowired
-    public GameDatabaseApi(GameManager gameManager)
+    public GameDatabaseApi(GameManager games)
     {
-        this.games = gameManager;
+        this.games = games;
     }
 
     @GetMapping("/all")
@@ -35,15 +32,15 @@ public class GameDatabaseApi {
     }
 
     @PostMapping
-    public Game addGame(@RequestBody Game gameTemp)
+    public Game addGame(@RequestBody Game game)
     {
-        return games.save(gameTemp);
+        return games.save(game);
     }
 
     @PutMapping
-    public Game updateGame(@RequestBody Game gameTemp)
+    public Game updateGame(@RequestBody Game game)
     {
-        return games.save(gameTemp);
+        return games.save(game);
     }
 
     @DeleteMapping

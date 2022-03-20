@@ -39,9 +39,9 @@ public class GameManager {
     @EventListener(ApplicationReadyEvent.class)
     public void fillDB()
     {
-        save(new Game(0,"Grand Theft Auto V","Playstation 5","Action", "PAL", LocalDate.of(2022,3,15),85));
-        save(new Game(1,"Forza Horizon 5","Xbox Series X","Racing", "PAL", LocalDate.of(2021,11,11),91));
-        save(new Game(2,"Super Mario Odyssey","Nintendo Switch","Platformer", "NTSC-J", LocalDate.of(2017,12,10),92));
-        save(new Game(3,"FIFA 22","Playstation 5","Sport", "PAL", LocalDate.of(2022,1,10),86));
+        save(new Game("Grand Theft Auto V","Playstation 5","Action", "PAL", LocalDate.of(2022,3,15),85));
+        save(new Game("Forza Horizon 5","Xbox Series X","Racing", "PAL", LocalDate.of(2021,11,11),91));
+        save(new Game("Super Mario Odyssey","Nintendo Switch","Platformer", "NTSC-J", LocalDate.of(2017,12,10),92));
+        save(new Game("FIFA 22","Playstation 5","Sport", "PAL", LocalDate.of(2022,1,10),86));
     }
 }
